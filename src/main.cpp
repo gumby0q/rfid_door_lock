@@ -39,6 +39,8 @@ void main_loop(void) {
 
         if (validation_status != 0) {
             Serial.println("cache validation_status success");
+            open();
+
         } else {
             Serial.println("cache validation_status fail");
 
@@ -67,5 +69,5 @@ void main_loop(void) {
         }
     }
 
-    delay(500);
+    delay(250);
 }

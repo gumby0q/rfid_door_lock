@@ -5,8 +5,8 @@
 #define WIFI_PASS "yodamaster"
 
 // #define SERVER_ADDRESS "http://192.168.0.30:3000"
-// #define SERVER_ADDRESS "http://192.168.1.30:3000"
-#define SERVER_ADDRESS "http://192.168.1.132:3000"
+// #define SERVER_ADDRESS "http://192.168.1.132:3000"
+#define SERVER_ADDRESS "https://keychain.titanium-labs.com/api/checkkey"
 
 #define SS_PIN  4       /* d2 */
 #define RST_PIN 5       /* d1 */

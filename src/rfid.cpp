@@ -25,6 +25,7 @@ void rfid_init(void)
     keys[0] = "iddb3e253c";
 
     SPI.begin();         // Init SPI bus.
+    SPI.setFrequency(500000L);
     mfrc522.PCD_Init();  // Init MFRC522 card.
 }
 
@@ -88,4 +89,12 @@ void rfid_cache_id(String id)
     if (nextEmptyKey >= KEYS_CACHE_SIZE) {
         nextEmptyKey = CACHE_START_INDEX;
     }
+
+    /* log cache */
+    // Serial.println("cached keys");
+    // for (uint8_t i = 0; i < KEYS_CACHE_SIZE; i++) {
+        
+    //     Serial.print(keys[i]);
+    //     Serial.println(" ");
+    // }
 }

@@ -1,7 +1,8 @@
 #include <Arduino.h>
 
 #include "configs.h"
-#define KEYS_CACHE_SIZE ((uint8_t)256)
+#define KEYS_CACHE_SIZE ((uint16_t)128)
+// #define KEYS_CACHE_SIZE ((uint8_t)3) /* test */
 
 void rfid_init(void);
 int8_t rfid_scan(String * id);

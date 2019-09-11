@@ -39,7 +39,7 @@ int8_t server_validation(String inputId, int8_t* access_status)
 
         char JSONmessageBuffer[300];
         root.prettyPrintTo(JSONmessageBuffer, sizeof(JSONmessageBuffer));
-        Serial.println(JSONmessageBuffer);
+        // Serial.println(JSONmessageBuffer);
     
         if (http.begin(client, SERVER_ADDRESS)) {  // HTTP
             http.addHeader("Content-Type", "application/json");  //Specify content-type header
