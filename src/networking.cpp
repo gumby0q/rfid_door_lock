@@ -68,7 +68,7 @@ int8_t server_validation(String inputId, int8_t* access_status)
                     /* access denied */
                     *access_status = (int8_t)0; /* false */
                 }
-            } else  if (httpCode < 0) {
+            } else  if (httpCode != 200) {
                 error = HTTP_POST_ERROR;
             }
 
