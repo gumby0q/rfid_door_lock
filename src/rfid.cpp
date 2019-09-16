@@ -3,7 +3,7 @@
 #include "MFRC522/src/MFRC522.h"
 
 /* depends from harcoded length */
-#define CACHE_START_INDEX 1
+#define CACHE_START_INDEX 2
 
 String keys[KEYS_CACHE_SIZE];
 //  = {
@@ -22,7 +22,9 @@ String prevCard = "";
 
 void rfid_init(void)
 {
-    keys[0] = "iddb3e253c";
+    keys[0] = "2a8452f"; /* alyona */
+    keys[1] = "db3e253c"; /* tolik */
+    keys[2] = "8f91c149"; /* Nick */
 
     SPI.begin();         // Init SPI bus.
     SPI.setFrequency(500000L);
