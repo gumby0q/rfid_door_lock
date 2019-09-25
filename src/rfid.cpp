@@ -31,15 +31,26 @@ void rfid_init(void)
     mfrc522.PCD_Init();  // Init MFRC522 card.
 }
 
-int8_t rfid_scan(String * id)
+void rfid_reinit(void) 
 {
+    Serial.println("rfid_reinit");
+    mfrc522.PCD_Init();
+}
+
+int8_t rfid_scan(String * id)
+{   
+    /* legacy code>>> */
+    /* maybe bug fix with spontaously stop reading  */
+	mfrc522.PCD_Init();    // Init MFRC522
+    /* legacy code<<< */
+
     // Поиск новой метки
     if ( ! mfrc522.PICC_IsNewCardPresent()) {
        return 1;
     }
     // Выбор метки
     if ( ! mfrc522.PICC_ReadCardSerial()) {
-       return 1;
+       return 2;
     }
     
     String checkingId;
