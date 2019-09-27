@@ -28,20 +28,20 @@ void rfid_init(void)
 
     SPI.begin();         // Init SPI bus.
     SPI.setFrequency(500000L);
-    mfrc522.PCD_Init();  // Init MFRC522 card.
+    mfrc522.PCD_Init(SS_PIN, RST_PIN);  // Init MFRC522 card.
 }
 
 void rfid_reinit(void) 
 {
     Serial.println("rfid_reinit");
-    mfrc522.PCD_Init();
+    mfrc522.PCD_Init(SS_PIN, RST_PIN);
 }
 
 int8_t rfid_scan(String * id)
 {   
     /* legacy code>>> */
     /* maybe bug fix with spontaously stop reading  */
-	mfrc522.PCD_Init();    // Init MFRC522
+	mfrc522.PCD_Init(SS_PIN, RST_PIN);    // Init MFRC522
     /* legacy code<<< */
 
     // Поиск новой метки
@@ -69,7 +69,7 @@ int8_t rfid_scan(String * id)
     mfrc522.PICC_HaltA();
     // Stop encryption on PCD
     mfrc522.PCD_StopCrypto1();
-    mfrc522.PCD_Init();    // Init MFRC522
+    mfrc522.PCD_Init(SS_PIN, RST_PIN);    // Init MFRC522
 
     return 0;
 }
