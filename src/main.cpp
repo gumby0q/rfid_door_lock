@@ -47,12 +47,12 @@ void main_loop(void) {
 
         /* http log >>> */
         int8_t http_log_error = 0;
-        http_log_error = http_log("rfid_scan ok ");
-        if (http_log_error != 0) {
-            Serial.print("http_log_error rfid_scan ok ");
-            Serial.print(http_log_error);
-            Serial.println(" ");
-        }
+        // http_log_error = http_log("rfid_scan ok ");
+        // if (http_log_error != 0) {
+        //     Serial.print("http_log_error rfid_scan ok ");
+        //     Serial.print(http_log_error);
+        //     Serial.println(" ");
+        // }
         /* http log <<< */
 
         int8_t validation_status = 0;
