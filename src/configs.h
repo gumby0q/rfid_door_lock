@@ -1,7 +1,8 @@
 // #define WIFI_NAME "Wi Fi kk"
 // #define WIFI_PASS "vq334411"
 
-#define WIFI_NAME "TL-2.4G"
+// #define WIFI_NAME "TL-2.4G"
+#define WIFI_NAME "IgorHome"
 #define WIFI_PASS "yodamaster"
 
 // #define SERVER_ADDRESS "http://192.168.0.30:3000"
@@ -9,7 +10,7 @@
 #define SERVER_ADDRESS "http://keychain.titanium-labs.com/api/checkkey"
 
 /* comment string below for dissable logs */
-#define SERVER_LOGS
+// #define SERVER_LOGS
 // #define LOG_SERVER_ADDRESS "http://192.168.1.21:3000/debug-log"
 #define LOG_SERVER_ADDRESS "http://keychain.titanium-labs.com/debug-log"
 
