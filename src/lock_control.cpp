@@ -54,7 +54,7 @@ void close_lock(void)
     }
 }
 
-void lock_control_init() 
+void lock_control_init(void) 
 {
     pinMode(PIN_LOCK, OUTPUT);
     digitalWrite(PIN_LOCK, HIGH);

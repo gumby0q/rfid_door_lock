@@ -4,6 +4,7 @@
 #include "rfid.h"
 #include "networking.h"
 #include "lock_control.h"
+#include "status_leds.h"
 #include "button.h"
 
 
@@ -21,6 +22,9 @@ void main_setup(void) {
     Serial.println();
 
     lock_control_init();
+    #ifdef KEY_REGISTRATION_DEVICE
+        status_leds_init();
+    #endif
     button_init();
     button_attach_handler(&open);
 
@@ -90,8 +94,19 @@ void main_loop(void) {
                     open();
                 } else { /* false */
                     Serial.println("server_validation fail");
+
+                    #ifdef KEY_REGISTRATION_DEVICE
+                        status_leds_blink_red();
+                    #endif
                 }
             } else if (error != 0) {
+                #ifdef KEY_REGISTRATION_DEVICE
+                if (error == WIFI_UNABLE_TO_CONNECT) {
+                    open();
+                    status_leds_blink_red();
+                }
+                #endif
+
                 Serial.println("server_validation error");
                 Serial.print("error ");
                 Serial.print(error);

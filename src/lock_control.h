@@ -2,7 +2,7 @@
 
 #include "configs.h"
 
-void lock_control_init();
+void lock_control_init(void);
 void open(void);
 
 void pin_test(void);

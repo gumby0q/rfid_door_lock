@@ -1,8 +1,14 @@
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* uncomment if it is for key registration device  */
+// #define KEY_REGISTRATION_DEVICE
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+
 // #define WIFI_NAME "Wi Fi kk"
 // #define WIFI_PASS "vq334411"
 
-// #define WIFI_NAME "TL-2.4G"
-#define WIFI_NAME "IgorHome"
+#define WIFI_NAME "TL-2.4G"
+// #define WIFI_NAME "IgorHome"
 #define WIFI_PASS "yodamaster"
 
 // #define SERVER_ADDRESS "http://192.168.0.30:3000"
@@ -23,3 +29,4 @@
 
 #define PIN_LOCK 2      /* d4 */
 #define PIN_BUTTON 0    /* d3 */
+#define LED_RED_PIN 16      /* d0 */
