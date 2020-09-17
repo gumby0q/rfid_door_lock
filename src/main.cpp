@@ -60,7 +60,10 @@ void main_loop(void) {
         /* http log <<< */
 
         int8_t validation_status = 0;
+
+        #ifndef KEY_REGISTRATION_DEVICE
         rfid_validate_id(id, &validation_status);
+        #endif
 
         if (validation_status != 0) {
             Serial.println("cache validation_status success");
